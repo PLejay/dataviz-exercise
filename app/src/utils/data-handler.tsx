@@ -1,4 +1,4 @@
-import { Month, Post } from '../types';
+import { Month, Post, ValuePerMonth } from '../types';
 
 export const getMonthFromDateString = (dateString: string): Month => {
   // Convert Unix timestamp to a Javascript date, then extract the month
@@ -8,7 +8,7 @@ export const getMonthFromDateString = (dateString: string): Month => {
 };
 
 export const getPostNumberByMonth = (posts: Post[]) => {
-  const postsByMonth = {
+  const postsByMonth: ValuePerMonth = {
     Jan: 0,
     Feb: 0,
     Mar: 0,
