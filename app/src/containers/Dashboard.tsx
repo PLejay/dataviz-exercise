@@ -1,9 +1,9 @@
 import React from 'react';
-import { ValuePerMonth } from '../types';
+import { ValueByMonth } from '../types';
 import LineChart from '../components/LineChart';
 
 interface Props {
-  data: ValuePerMonth;
+  data: ValueByMonth;
 }
 
 function Dashboard(props: Props) {

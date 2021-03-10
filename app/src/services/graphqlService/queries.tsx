@@ -6,6 +6,7 @@ export const TESTQUERY = gql`
       createdAt
       likelyTopics {
         label
+        likelihood
       }
     }
   }

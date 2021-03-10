@@ -22,5 +22,8 @@
     "@visx/scale": "^1.6.1",
     "@visx/shape": "^1.6.1",
     "d3-array": "^2.11.0"
+  },
+  "devDependencies": {
+    "@types/d3-array": "^2.9.0"
   }
 }

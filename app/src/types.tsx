@@ -12,7 +12,7 @@ export type Month =
   | 'Nov'
   | 'Dec';
 
-export type ValuePerMonth = {
+export type ValueByMonth = {
   Jan: number;
   Feb: number;
   Mar: number;
@@ -39,4 +39,44 @@ export interface Post {
 export interface Topic {
   label: string;
   likelihood: number;
+  prevalence?: number; // Measured as the sum of likelihood over a given time period
 }
+
+export type TopicByMonth = {
+  Jan: {
+    [topic: string]: number;
+  };
+  Feb: {
+    [topic: string]: number;
+  };
+  Mar: {
+    [topic: string]: number;
+  };
+  Apr: {
+    [topic: string]: number;
+  };
+  May: {
+    [topic: string]: number;
+  };
+  Jun: {
+    [topic: string]: number;
+  };
+  Jul: {
+    [topic: string]: number;
+  };
+  Aug: {
+    [topic: string]: number;
+  };
+  Sep: {
+    [topic: string]: number;
+  };
+  Oct: {
+    [topic: string]: number;
+  };
+  Nov: {
+    [topic: string]: number;
+  };
+  Dec: {
+    [topic: string]: number;
+  };
+};

@@ -1,23 +1,22 @@
 import React from 'react';
-import { ValuePerMonth } from '../types';
+import { ValueByMonth } from '../types';
 import { scaleLinear, scaleBand } from '@visx/scale';
 import { Group } from '@visx/group';
-import { Bar } from '@visx/shape';
+import { Bar, Line, LinePath } from '@visx/shape';
+import { extent } from 'd3-array';
 
 interface Props {
-  chartData: ValuePerMonth;
+  chartData: ValueByMonth;
 }
 
 function LineChart(props: Props) {
   const { chartData } = props;
   // Convert the data to format [['Jan',25],['Feb',18],...]
-  let data: [string, number][] = Object.entries(chartData).sort(
-    (a, b) => b[1] - a[1]
-  );
+  let data: [string, number][] = Object.entries(chartData);
 
   // Create a graph, following the example at https://github.com/airbnb/visx
   // Define the graph dimensions and margins
-  const width = 500;
+  const width = 800;
   const height = 500;
   const margin = { top: 20, bottom: 20, left: 20, right: 20 };
 
