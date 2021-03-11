@@ -1,3 +1,8 @@
+export interface ChartData {
+  postData: ValueByMonth;
+  topicData: TopicByMonth;
+}
+
 export type Month =
   | 'Jan'
   | 'Feb'
@@ -77,6 +82,9 @@ export type TopicByMonth = {
     [topic: string]: number;
   };
   Dec: {
+    [topic: string]: number;
+  };
+  All: {
     [topic: string]: number;
   };
 };

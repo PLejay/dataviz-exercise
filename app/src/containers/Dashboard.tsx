@@ -1,15 +1,21 @@
 import React from 'react';
-import { ValueByMonth } from '../types';
+import { ChartData } from '../types';
 import LineChart from '../components/LineChart';
+import TopicChart from '../components/TopicChart';
 
 interface Props {
-  data: ValueByMonth;
+  data: ChartData;
 }
 
 function Dashboard(props: Props) {
   const { data } = props;
 
-  return <LineChart chartData={data} />;
+  return (
+    <div>
+      <LineChart chartData={data.postData} />
+      <TopicChart chartData={data.topicData} />
+    </div>
+  );
 }
 
 export default Dashboard;

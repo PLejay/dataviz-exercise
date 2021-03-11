@@ -45,6 +45,7 @@ export const getTopicsByMonth = (posts: Post[]) => {
     Oct: {},
     Nov: {},
     Dec: {},
+    All: {},
   };
 
   posts.forEach((post) => {
@@ -57,6 +58,13 @@ export const getTopicsByMonth = (posts: Post[]) => {
         topicsByMonth[monthCreated][topic.label] += topic.likelihood;
       } else {
         topicsByMonth[monthCreated][topic.label] = topic.likelihood;
+      }
+
+      // Also collect the sum across all months
+      if (topicsByMonth.All.hasOwnProperty(topic.label)) {
+        topicsByMonth.All[topic.label] += topic.likelihood;
+      } else {
+        topicsByMonth.All[topic.label] = topic.likelihood;
       }
     });
   });
