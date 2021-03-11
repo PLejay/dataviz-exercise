@@ -21,6 +21,7 @@
     "@visx/group": "^1.6.1",
     "@visx/scale": "^1.6.1",
     "@visx/shape": "^1.6.1",
+    "@vx/axis": "^0.0.199",
     "d3-array": "^2.11.0"
   },
   "devDependencies": {

@@ -9,7 +9,7 @@ interface Props {
   chartData: ValueByMonth;
 }
 
-function LineChart(props: Props) {
+function PostChart(props: Props) {
   const { chartData } = props;
   // Convert the data to format [['Jan',25],['Feb',18],...]
   let data: [string, number][] = Object.entries(chartData);
@@ -18,7 +18,7 @@ function LineChart(props: Props) {
   // Define the graph dimensions and margins
   const width = 800;
   const height = 500;
-  const margin = { top: 20, bottom: 20, left: 20, right: 20 };
+  const margin = { top: 10, bottom: 10, left: 20, right: 20 };
 
   // Define max vertical and horizontal bounds
   const xMax = width - margin.left - margin.right;
@@ -50,23 +50,27 @@ function LineChart(props: Props) {
   const yPoint = compose(yScale, y);
 
   return (
-    <svg width={width} height={height}>
-      {data.map((d, i) => {
-        const barHeight = yMax - yPoint(d);
-        return (
-          <Group key={`bar-${i}`}>
-            <Bar
-              x={xPoint(d)}
-              y={yMax - barHeight}
-              height={barHeight}
-              width={xScale.bandwidth()}
-              fill="#fc2e1c"
-            />
-          </Group>
-        );
-      })}
-    </svg>
+    <div>
+      <h2>Posts by month</h2>
+      <svg width={width} height={height}>
+        <rect width={width} height={height} fill="#C2C2C2" rx={25} ry={14} />
+        {data.map((d, i) => {
+          const barHeight = yMax - yPoint(d);
+          return (
+            <Group key={`bar-${i}`} top={10} left={15}>
+              <Bar
+                x={xPoint(d)}
+                y={yMax - barHeight}
+                height={barHeight}
+                width={xScale.bandwidth()}
+                fill="#fc2e1c"
+              />
+            </Group>
+          );
+        })}
+      </svg>
+    </div>
   );
 }
 
-export default LineChart;
+export default PostChart;

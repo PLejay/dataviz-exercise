@@ -1,0 +1,13 @@
+.topics {
+  display: flex;
+  justify-content: center;
+}
+
+.topic-label {
+  margin: 0px 10px 15px 10px;
+  background-color: rgb(190, 177, 177);
+  color: black;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}

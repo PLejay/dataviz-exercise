@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChartData } from '../types';
-import LineChart from '../components/LineChart';
+import PostChart from '../components/PostChart';
 import TopicChart from '../components/TopicChart';
 
 interface Props {
@@ -12,7 +12,8 @@ function Dashboard(props: Props) {
 
   return (
     <div>
-      <LineChart chartData={data.postData} />
+      <h1>Data visualisation exercise</h1>
+      <PostChart chartData={data.postData} />
       <TopicChart chartData={data.topicData} />
     </div>
   );
